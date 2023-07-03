@@ -476,7 +476,7 @@ ul {
     flex-direction: column;
   }
   .smallSidebar .close-btn {
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 10px;
     background: transparent;
@@ -488,11 +488,15 @@ ul {
   .smallSidebar .nav-links {
     padding-top: 2rem;
     display: flex;
+    /* justify-content: space-between; */
     flex-direction: column;
+  }
+  .smallSidebar .nav-links a{
+    
+    text-transform: capitalize;
   }
   .smallSidebar .nav-link {
     display: flex;
-    align-items: center;
     color: var(--grey-500);
     padding: 1rem 0;
     text-transform: capitalize;
@@ -506,7 +510,9 @@ ul {
   }
   .smallSidebar .icon {
     font-size: 1.5rem;
-    margin-right: 1rem;
+    margin-right: 3.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: grid;
     place-items: center;
     transition: var(--transition);
@@ -983,3 +989,96 @@ box-shadow: var(--shadow-2);
     background: var(--primary-500);
     color: var(--white);
   }
+  .mainContainerapp{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .applyjob{
+    width:30%;
+    font-size: 5px;
+    /* margin-top: 10px; */
+    border:1px solid black;
+    margin: 10px;
+  }
+  .applyjob h1{
+    font-size: 30px;
+  }
+ .iconhead{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  background-color: #3b82f6;
+  border: 1px solid blue;
+  color: #ffffff;
+ }
+ .h1head{
+  margin-top: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+  
+}
+ .firstHead{
+  display: flex;
+  justify-content: space-between;
+ }
+
+ .content1{
+  display: flex;
+  /* justify-content: space-between; */
+
+  padding-left: 5px;
+  
+  padding-right: 5px;
+ }
+ .content1 h3{
+  font-size: 25px;
+  text-align: center;
+  margin-top:10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* max-width: 900px; */
+ }
+ .content1 .head1{
+  /* border: 1px solid black; */
+  width: 150px;
+  margin-left: 40%;
+}
+.icon1{
+  
+  /* border: 1px solid black; */
+  width: 50px;
+
+ }
+ .icon1 img{
+  width:30px;
+  height:30px;
+  margin-top:10px;
+  margin-left:10%; 
+ }
+ .applyjob button{
+  background-color: rgb(57, 59, 224);
+  text-align: center;
+  width:95%;
+  margin:2%;
+ }
+
+
+ @media only screen and (max-width: 600px) {
+  .applyjob{
+    width: 90%;
+    padding: 10px;
+    margin-left:20px;
+    margin-top:30px;
+    border-radius: 10px;
+  }
+  .mainContainerapp{
+    display: block;
+  }
+}

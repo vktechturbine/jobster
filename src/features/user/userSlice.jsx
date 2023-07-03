@@ -79,6 +79,7 @@ const userSlice = createSlice({
             }
         },
         toggleSidebar:(state) => {
+            console.log(!state.isSidebarOpen)
             state.isSidebarOpen = !state.isSidebarOpen;
           
         },
