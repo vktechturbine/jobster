@@ -11,8 +11,8 @@ export const checkForUnauthorizedResponse =(error,thunkAPI) => {
 };
 
 const CustomFetch = axios.create({
-    // baseURL:'https://jobify-prod.herokuapp.com/api/v1/toolkit',
-    baseURL:'http://localhost:3001',
+    baseURL:'http://192.168.0.184:3001',
+    // baseURL:'http://localhost:3001',
 })
 
 export default CustomFetch

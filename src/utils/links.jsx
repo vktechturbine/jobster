@@ -28,5 +28,11 @@ export const links = [
     path: 'profile',
     icon: <ImProfile />,
   },
+  {
+    id: 5,
+    text: 'Seeking_job',
+    path: 'seeking_jobs',
+    icon: <img src='/src/assets/images/job.png' style={{width:'20px',marginLeft:'2px',textAlign:'center',marginBottom:'-10px',paddingTop:'15px'}}></img>
+  },
 ];
 
