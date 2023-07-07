@@ -1,13 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 const initialState = {
-    jobs: [],
+    jobapplications: [],
     loading: false,
     error: null,
 };
-export const getAllData = createAsyncThunk('applyAlljobs', async (_, thunkAPI) => {
+
+export const applications = createAsyncThunk('applications', async (_, thunkAPI) => {
     console.log(thunkAPI.getState().user.user.token)
-    const response = await fetch('http://192.168.0.184:3001/job/apply_for_jobs',{
+    const response = await fetch('http://192.168.0.184:3001/job/applications',{
         headers: {
             Authorization: 'Bearer ' + thunkAPI.getState().user.user.token,
             // "Content-Type":"application/json"
@@ -17,9 +18,10 @@ export const getAllData = createAsyncThunk('applyAlljobs', async (_, thunkAPI) =
     console.log(result)
     return result;
 })
-export const apply_Job = createAsyncThunk('appliedjob',async(job,thunkAPI) => {
-    console.log(job);
-     const response = await fetch('http://192.168.0.184:3001/job/add_apply_for_jobs',{
+export const selection_status = createAsyncThunk('selection_status',async(job,thunkAPI) => {
+  
+   console.log(job)
+     const response = await fetch('http://192.168.0.184:3001/job/applicationRequest',{
         method:'POST',
         body:JSON.stringify(job),
         headers:{
@@ -31,36 +33,39 @@ export const apply_Job = createAsyncThunk('appliedjob',async(job,thunkAPI) => {
     return result;
     
 }) 
-export const Applyjobs = createSlice({
+
+export const Addapplication = createSlice({
     name: 'applyjobs',
     initialState,
     extraReducers: {
-        [getAllData.pending]: (state) => {
+        [applications.pending]: (state) => {
             state.loading = true;
         },
-        [getAllData.fulfilled]: (state, action) => {
+        [applications.fulfilled]: (state, action) => {
             state.loading = false;
-            state.jobs = action.payload;
+            console.log(action.payload);
+            state.jobapplications = action.payload;
         },
-        [getAllData.rejected]: (state, action) => {
+        [applications.rejected]: (state, action) => {
             state.loading = true;
             state.error = action.payload;
         },
-        [apply_Job.pending]: (state) => {
+        [selection_status.pending]: (state) => {
             state.loading = true;
         },
-        [apply_Job.fulfilled]: (state, action) => {
+        [selection_status.fulfilled]: (state, action) => {
             state.loading = false;
             // state.jobs = action.payload;
             // console.log(action.payload);
             toast.success(action.payload.message);
         },
-        [apply_Job.rejected]: (state, action) => {
+        [selection_status.rejected]: (state, action) => {
             state.loading = true;
             toast.error('not applied');
             // state.error = action.payload;
         }
+       
     }
 })
 
-export default Applyjobs.reducer;
+export default Addapplication.reducer;
