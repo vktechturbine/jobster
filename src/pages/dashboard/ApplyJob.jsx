@@ -15,7 +15,7 @@ const ApplyJob = () => {
     }, [])
 
     const data = useSelector((state) => {
-        console.log(state.applyJob.jobs.jobs)
+        // console.log(state)
         // setData(state.applyJob.jobs.jobs)
         // return state.applyJob;
         return state.applyJob.jobs.jobs;

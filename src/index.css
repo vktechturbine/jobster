@@ -461,15 +461,16 @@ ul {
     transition: var(--transition);
   }
   .smallSidebar .show-sidebar {
-    z-index: 0;
+    z-index: 99;
     opacity: 1;
+        
   }
   .smallSidebar .content {
     background: var(--white);
     width: var(--fluid-width);
     height: 95vh;
     border-radius: var(--borderRadius);
-    padding: 4rem 2rem;
+    padding: 4rem 1rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -494,6 +495,9 @@ ul {
   .smallSidebar .nav-links a{
     
     text-transform: capitalize;
+    text-align: center;
+    
+    
   }
   .smallSidebar .nav-link {
     display: flex;
@@ -510,9 +514,9 @@ ul {
   }
   .smallSidebar .icon {
     font-size: 1.5rem;
-    margin-right: 3.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-right: 0.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
     display: grid;
     place-items: center;
     transition: var(--transition);
