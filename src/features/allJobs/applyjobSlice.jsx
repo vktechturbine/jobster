@@ -6,20 +6,19 @@ const initialState = {
     error: null,
 };
 export const getAllData = createAsyncThunk('applyAlljobs', async (_, thunkAPI) => {
-    console.log(thunkAPI.getState().user.user.token)
-    const response = await fetch('http://192.168.0.184:3001/job/apply_for_jobs',{
+
+    const response = await fetch(`${import.meta.env.VITE_HOST}/job/apply_for_jobs`,{
         headers: {
             Authorization: 'Bearer ' + thunkAPI.getState().user.user.token,
             // "Content-Type":"application/json"
         },
-    });
+    })
     const result = await response.json();
-    console.log(result)
     return result;
 })
 export const apply_Job = createAsyncThunk('appliedjob',async(job,thunkAPI) => {
-    console.log(job);
-     const response = await fetch('http://192.168.0.184:3001/job/add_apply_for_jobs',{
+   
+     const response = await fetch(`${import.meta.env.VITE_HOST}/job/add_apply_for_jobs`,{
         method:'POST',
         body:JSON.stringify(job),
         headers:{
@@ -51,8 +50,6 @@ export const Applyjobs = createSlice({
         },
         [apply_Job.fulfilled]: (state, action) => {
             state.loading = false;
-            // state.jobs = action.payload;
-            // console.log(action.payload);
             toast.success(action.payload.message);
         },
         [apply_Job.rejected]: (state, action) => {

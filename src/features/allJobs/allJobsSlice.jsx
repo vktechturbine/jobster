@@ -23,7 +23,6 @@ const initialState = {
     ...initialFiltersState,
 };
 export const getAllJobs = createAsyncThunk('allJobs/getJobs',async(_, thunkAPI) => {
-    console.log(thunkAPI.getState().allJobs);
     const {page,search,searchStatus,searchType,sort} = thunkAPI.getState().allJobs;
     let url = `job/jobs?status=${searchStatus}&jobType=${searchType}&sort=${sort}&page=${page}`
     if(search){
@@ -97,7 +96,6 @@ const allJobsSlice = createSlice({
             toast.error(payload);
         }).addCase(showStats.pending,(state) => {
             state.isLoading = true;
-            console.log('still loading')
         }).addCase(showStats.fulfilled,(state,{payload}) => {
             state.isLoading = false;
             state.stats = payload.defaultStats;
