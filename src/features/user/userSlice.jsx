@@ -12,22 +12,20 @@ const initialState = {
 }
 
 export const registerUser = createAsyncThunk('user/registerUser',async(user,thunkAPI) => {
-    // console.log(`Register User : ${JSON.stringify(user)}`);
-    console.log(user);
+    
    try{
     const resp = await CustomFetch.post('/user/register',user);
-    console.log(resp.data);
+   
     return resp.data;
    }catch(error){
     return thunkAPI.rejectWithValue(error.response.data.msg);
    }
 });
 export const loginUser = createAsyncThunk('user/loginUser',async(user,thunkAPI)=>{
-    // console.log(`Login User : ${JSON.stringify(user)}`);
+
     try{
         const resp = await CustomFetch.post('/user/login',user);
-        console.log("loginslice")
-        console.log(resp.data);
+        
         return resp.data;
     }catch(error)
     {
@@ -35,7 +33,7 @@ export const loginUser = createAsyncThunk('user/loginUser',async(user,thunkAPI)=
     }
 })
 export const updateUser = createAsyncThunk('user/updateUser',async(user,thunkAPI) =>{
-    // console.log(thunkAPI.getState().user.user.token);
+   
     try{
         const resp = await CustomFetch.patch('/user/updateUser',user,{
             headers:{
@@ -79,7 +77,6 @@ const userSlice = createSlice({
             }
         },
         toggleSidebar:(state) => {
-            console.log(!state.isSidebarOpen)
             state.isSidebarOpen = !state.isSidebarOpen;
           
         },
@@ -101,9 +98,6 @@ const userSlice = createSlice({
             state.isLoading = true;
         }).addCase(loginUser.fulfilled,(state,{payload}) => {
             const user = payload;
-            console.log("userslice:");
-            console.log(user);
-            console.log("end userslice:");
             state.isLoading = false,
             state.user = user;
             addUsertoLocalStorage(user);
