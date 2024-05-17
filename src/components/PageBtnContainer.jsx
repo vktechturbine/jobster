@@ -28,7 +28,6 @@ const PageBtnContainer = () => {
     dispatch(changePage(newPage));
   }
   
-  //   console.log(pages);
   return (
     <main className='pageButtonContainer'>
         <button className='prev-btn' onClick={prevPage}>

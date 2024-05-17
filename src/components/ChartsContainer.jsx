@@ -6,7 +6,6 @@ const ChartsContainer = () => {
     const[barChart,setBarChart] = useState(true);
     const { monthlyApplications } = useSelector((store) => store.allJobs);
     const data = monthlyApplications;
-    console.log(monthlyApplications)
 
   return (
     <main className='chartContainer'>

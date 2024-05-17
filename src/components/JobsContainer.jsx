@@ -9,7 +9,6 @@ import PageBtnContainer from './PageBtnContainer';
 export const JobsContainer = () => {
     const {jobs, isLoading,page,totalJobs,numOfPages,search,searchStatus,searchType,sort} = useSelector((store) => store.allJobs);
     
-    //   console.log(pages)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getAllJobs());

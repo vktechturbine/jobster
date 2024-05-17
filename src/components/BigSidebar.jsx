@@ -5,6 +5,7 @@ import NavLinks from './NavLinks';
 
 const BigSidebar = () => {
   const {isSidebarOpen} = useSelector((state) => state.user);
+
   return (
     <main className='bigSideBar'>
         <div className={isSidebarOpen?'sidebar-container':'sidebar-container show-sidebar'}>
