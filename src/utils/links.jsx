@@ -32,19 +32,19 @@ export const links = [
     id: 5,
     text: 'Seeking_job',
     path: 'seeking_jobs',
-    icon: <img src='/src/assets/images/job.png' style={{width:'20px',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
+    icon: <img src='/src/assets/images/job.png' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
   },
   {
     id: 6,
     text: 'Jobs Applications',
     path: 'jobs_Applications',
-    icon: <img src='/src/assets/images/cv.png' style={{width:'20px',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
+    icon: <img src='/src/assets/images/cv.png' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
   },
   {
     id: 7,
     text: 'Applied Jobs',
     path: 'appliedApplications',
-    icon: <img src='/src/assets/images/cv.png' style={{width:'20px',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
+    icon: <img src='/src/assets/images/cv.png' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
   },
 ];
 

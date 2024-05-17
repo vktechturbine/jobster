@@ -1,5 +1,6 @@
-import axios from 'axios'
 import React from 'react'
+import axios from 'axios'
+// import env from "react-dotenv";
 import  {clearStore} from '../features/user/userSlice';
 
 export const checkForUnauthorizedResponse =(error,thunkAPI) => {
@@ -11,7 +12,8 @@ export const checkForUnauthorizedResponse =(error,thunkAPI) => {
 };
 
 const CustomFetch = axios.create({
-    baseURL:'http://192.168.0.184:3001',
+    // baseURL:'https://jobsterbackendversion1.onrender.com',
+    baseURL:`${import.meta.env.VITE_HOST}`,
     // baseURL:'http://localhost:3001',
 })
 

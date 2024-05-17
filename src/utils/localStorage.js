@@ -1,5 +1,4 @@
 export const addUsertoLocalStorage = (user) =>{
-    // console.log(user);
     localStorage.setItem('user',JSON.stringify(user));
 };
 export const removeUserFromLocalStorage = () => {
