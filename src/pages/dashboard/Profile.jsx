@@ -7,7 +7,7 @@ import { updateUser } from '../../features/user/userSlice';
 
 const Profile = () => {
   const {isLoading,user} = useSelector((store) => store.user);
-  console.log(isLoading)
+
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
     name:user?.name || '',
@@ -18,7 +18,7 @@ const Profile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const {name, email,lastName,location} = userData;
-    console.log(userData);
+    
     if(!name || !email || !lastName || !location)
     {
       toast.error('please Fill Out All Fields');

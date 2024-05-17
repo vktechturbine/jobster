@@ -7,7 +7,7 @@ import ChartsContainer from '../../components/ChartsContainer';
 
 const Stats = () => {
   const {isLoading,monthlyApplications} = useSelector((store) => store.allJobs);
-  console.log(monthlyApplications)
+
   const dispatch = useDispatch();
 
   useEffect(() => {
