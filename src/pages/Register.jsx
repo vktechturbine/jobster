@@ -14,13 +14,12 @@ import { useNavigate } from 'react-router-dom';
 }
 const Register = () => {
 const [values,setValues] = useState(initialState);
-console.log("Hello");
-console.log(values);
-console.log("World");
+
 const dispatch = useDispatch();
 const {isLoading,user}  = useSelector((state) => state.user);
 const navigate = useNavigate();
 useEffect(() =>{
+  
   if(user)
   {
     setTimeout(() => {
@@ -33,9 +32,12 @@ const toggleMember = () => {
 }
 
  const handleChange = (e) =>{
+
  const name = e.target.name;
  
  const value = e.target.value;
+ console.log("name :=> ", name)
+ console.log("value :=> ", value)
  setValues({...values,[name]:value})
  
 }
@@ -52,6 +54,8 @@ const onSubmit = (e) => {
   } */
   if(isUser)
   {
+    console.log("email :=> ", email);
+    console.log("password :=> ", password);
     dispatch(loginUser({email:email,password:password}));
     return;
   }
