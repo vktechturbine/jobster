@@ -4,7 +4,6 @@ import { clearValues } from "./JobSlice";
 import { showLoading, hideLoading, getAllJobs } from '../allJobs/allJobsSlice'
 
 const authHeader = (thunkAPI) => {
-  console.log(thunkAPI.getState().user.user.token)
     return {
       headers: {
         Authorization: 'Bearer '+ thunkAPI.getState().user.user.token,
@@ -38,7 +37,6 @@ export const deleteJobThunk = async(jobId,thunkAPI) => {
   export const editJobThunk = async({jobId,job},thunkAPI)=>{
 
     try{
-      console.log(thunkAPI)
       const resp = await CustomFetch.patch(`/job/jobs/${jobId}`, job,{
         headers: {
           Authorization: 'Bearer '+ thunkAPI.getState().user.user.token,

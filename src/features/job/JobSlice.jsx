@@ -32,8 +32,6 @@ const jobSlice = createSlice({
       state[name] = value;
     },
     clearValues: () => {
-      // getUserFromLocalStorage();
-      // console.log();
       return {
         ...initialState,
         jobLocation: getUserFromLocalStorage()?.location || '',
@@ -54,7 +52,6 @@ const jobSlice = createSlice({
       })
       .addCase(createJob.rejected, (state, { payload }) => {
         state.isLoading = false;
-        console.log(payload);
         toast.error(payload);
       }).addCase(editJob.pending,(state) => {
         state.isLoading = true;
