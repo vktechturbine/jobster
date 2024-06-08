@@ -15,6 +15,7 @@ export const JobsContainer = () => {
     },[page,search,searchStatus,searchType,sort])
     if(isLoading)
     {
+        
         return(
             <main className='jobsContainer'>
                <Loading center/>

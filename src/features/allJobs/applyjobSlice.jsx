@@ -1,13 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+import CustomFetch from "../../utils/axios";
 const initialState = {
     jobs: [],
     loading: false,
     error: null,
 };
+
 export const getAllData = createAsyncThunk('applyAlljobs', async (_, thunkAPI) => {
 
-    const response = await fetch(`${import.meta.env.VITE_HOST}/job/apply_for_jobs`,{
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/job/apply_for_jobs`,{
         headers: {
             Authorization: 'Bearer ' + thunkAPI.getState().user.user.token,
             // "Content-Type":"application/json"
@@ -17,8 +19,8 @@ export const getAllData = createAsyncThunk('applyAlljobs', async (_, thunkAPI) =
     return result;
 })
 export const apply_Job = createAsyncThunk('appliedjob',async(job,thunkAPI) => {
-   
-     const response = await fetch(`${import.meta.env.VITE_HOST}/job/add_apply_for_jobs`,{
+   console.log("job :=> ", job)
+     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/job/add_apply_for_jobs`,{
         method:'POST',
         body:JSON.stringify(job),
         headers:{
@@ -27,6 +29,7 @@ export const apply_Job = createAsyncThunk('appliedjob',async(job,thunkAPI) => {
         }
     })
     const result = response.json();
+    console.log("result :=> ", result)
     return result;
     
 }) 

@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const appliedApplications = createAsyncThunk('applications', async (_, thunkAPI) => {
-    const response = await fetch(`${import.meta.env.VITE_HOST}/job/appliedApplications`,{
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/job/appliedApplications`,{
         headers: {
             Authorization: 'Bearer ' + thunkAPI.getState().user.user.token,
             // "Content-Type":"application/json"

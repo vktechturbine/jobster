@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Main from '../components/Main'
 
 const Landing = () => {
+    
   return (
    <main>
     <nav className='nav'>
