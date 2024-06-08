@@ -12,7 +12,6 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   
-
   return (
    
     <BrowserRouter>

@@ -11,6 +11,7 @@ import {
 } from 'recharts';
 
 const BarCharts = ({data}) => {
+ 
   return (
     <ResponsiveContainer width='100%' height={300}>
     <BarChart data={data} margin={{ top: 50 }}>

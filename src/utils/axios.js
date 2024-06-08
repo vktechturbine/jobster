@@ -13,7 +13,7 @@ export const checkForUnauthorizedResponse =(error,thunkAPI) => {
 
 const CustomFetch = axios.create({
     // baseURL:'https://jobsterbackendversion1.onrender.com',
-    baseURL:`${import.meta.env.VITE_HOST}`,
+    baseURL:`${import.meta.env.VITE_BASE_URL}`,
     // baseURL:'http://localhost:3001',
 })
 

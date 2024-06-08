@@ -24,11 +24,12 @@ const initialState = {
 };
 export const getAllJobs = createAsyncThunk('allJobs/getJobs',async(_, thunkAPI) => {
     const {page,search,searchStatus,searchType,sort} = thunkAPI.getState().allJobs;
-    let url = `job/jobs?status=${searchStatus}&jobType=${searchType}&sort=${sort}&page=${page}`
+    let url = `${import.meta.env.VITE_BASE_URL}/job/jobs?status=${searchStatus}&jobType=${searchType}&sort=${sort}&page=${page}`
     if(search){
         url = url + `&search=${search}`;
     }
     try{
+        console.log("url :=> ", url)
         const resp = await CustomFetch.get(url,{
             headers:{
                 Authorization: 'Bearer '+ thunkAPI.getState().user.user.token,
@@ -40,7 +41,7 @@ export const getAllJobs = createAsyncThunk('allJobs/getJobs',async(_, thunkAPI) 
         return thunkAPI.rejectWithValue(error.response.data.msg);
     }
 })
-export const showStats = createAsyncThunk('allJobs/showStats',async(_,thunkAPI) => {
+export const showStats = createAsyncThunk(`/allJobs/showStats`,async(_,thunkAPI) => {
    
     try{
         const resp = await CustomFetch.get('/job/stats',{
