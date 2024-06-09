@@ -6,45 +6,45 @@ import { ImProfile } from 'react-icons/im';
 export const links = [
   {
     id: 1,
-    text: 'stats',
+    text: 'Dashboards',
     path: '/',
     icon: <IoBarChartSharp />,
   },
   {
     id: 2,
-    text: 'all jobs',
+    text: 'View Created Jobs',
     path: 'all-jobs',
     icon: <MdQueryStats />,
   },
   {
     id: 3,
-    text: 'add job',
+    text: 'Create a new Job',
     path: 'add-job',
     icon: <FaWpforms />,
   },
   {
     id: 4,
-    text: 'profile',
+    text: 'Profile Setting',
     path: 'profile',
     icon: <ImProfile />,
   },
   {
     id: 5,
-    text: 'Seeking_job',
+    text: 'Find a new Job',
     path: 'seeking_jobs',
-    icon: <img src='/src/assets/images/job.png' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
+    icon: <img src='/src/assets/images/findjob.svg' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
   },
   {
     id: 6,
     text: 'Jobs Applications',
     path: 'jobs_Applications',
-    icon: <img src='/src/assets/images/cv.png' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
+    icon: <img src='/src/assets/images/jobsapplication.svg' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
   },
   {
     id: 7,
     text: 'Applied Jobs',
     path: 'appliedApplications',
-    icon: <img src='/src/assets/images/cv.png' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
+    icon: <img src='/src/assets/images/cv.svg' style={{width:'2rem',marginLeft:'2px',textAlign:'center',marginBottom:'-5px',paddingTop:'2px'}}></img>
   },
 ];
 
